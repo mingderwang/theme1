@@ -1,0 +1,75 @@
+import type { ThemeDraft } from '../types.ts'
+
+/**
+ * Cold high mountain range: sharp ridges, a snow line, deep glacial valleys
+ * and tarns. The world is deliberately large relative to its relief so a
+ * single viewpoint can hold several ridges rather than one face.
+ */
+export const alpine: ThemeDraft = {
+  name: 'alpine',
+  terrain: {
+    worldSize: 4200,
+    resolution: 1536,
+    amplitude: 1100,
+    featureSize: 900,
+    octaves: 11,
+    lacunarity: 2.07,
+    ridgedMix: 0.66,
+    ridgeSharpness: 0.85,
+    warpStrength: 0.5,
+    warpFrequency: 0.5,
+    shapeFeatureSize: 7000,
+    shapeOctaves: 4,
+    seaThreshold: 0.0,
+    coastSoftness: 0.14,
+    seaDepth: 110,
+    waterFraction: 0.18,
+    edgeFalloff: 0.85,
+    edgeWidth: 0.26,
+    erosion: { enabled: true, iterations: 10, talusAngle: 34, rate: 0.35, diffusion: 0.06 },
+    moisture: { frequency: 2.4, seaInfluence: 0.14, runoff: 0.16 },
+    climate: { seaLevelTemperature: 11, lapseRate: 0.0055, variation: 4 },
+  },
+  water: {
+    deepColor: '#0c2a3c',
+    shallowColor: '#3d94a0',
+    turbidity: 0.028,
+    depthFade: 16,
+    foamDepth: 1.4,
+  },
+  cloud: {
+    coverage: 0.44,
+    baseAltitude: 1100,
+    topAltitude: 2000,
+    featureSize: 3000,
+    density: 1.0,
+    shadowStrength: 0.45,
+  },
+  atmosphere: { fogDensity: 0.00011, fogHeight: 1000, fogColor: '#c6d6e8', sunScatter: 0.55 },
+  lighting: {
+    sunDirection: { x: 0.55, y: 0.58, z: -0.6 },
+    sunColor: '#fff1dc',
+    sunIntensity: 3.4,
+    ambientSkyColor: '#8fb6e4',
+    ambientIntensity: 0.42,
+    ambientOcclusion: { strength: 0.85, radius: 34, samples: 4 },
+  },
+  palette: {
+    dryColor: '#9c9168',
+    grassColor: '#4c7038',
+    forestColor: '#2b5230',
+    rockColor: '#5c5952',
+    highlandColor: '#7c7a70',
+    snowColor: '#f7fafc',
+    sandColor: '#b8b094',
+    underwaterColor: '#22404a',
+    treeLine: 340,
+    treeLineBlend: 240,
+    snowLine: 450,
+    snowBlend: 260,
+    rockSlope: 0.85,
+    snowSlope: 0.95,
+    variation: 0.1,
+    variationColor: '#6b5d43',
+  },
+}

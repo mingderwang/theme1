@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "bun run viewer:build",
+  "outputDirectory": "public",
+  "installCommand": "bun install",
+  "framework": null,
+  "headers": [
+    {
+      "source": "/main.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
+      ]
+    }
+  ]
+}

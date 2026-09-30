@@ -1,0 +1,24 @@
+{
+  "name": "theme1",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "module": "src/index.ts",
+  "description": "Procedural 3D environment generation and CPU image rendering",
+  "scripts": {
+    "render": "bun run src/cli/index.ts",
+    "themes": "bun run src/cli/index.ts themes",
+    "batch": "bun run src/cli/index.ts batch",
+    "serve": "bun run src/cli/serve.ts",
+    "viewer:build": "bun build src/three/main.ts --outdir public --target browser",
+    "bench": "bun run src/cli/bench.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/three": "^0.180.0",
+    "three": "^0.180.0",
+    "typescript": "^5.9.0"
+  }
+}

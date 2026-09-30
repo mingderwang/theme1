@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>theme1 — world explorer</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --panel: rgba(14, 16, 20, 0.82);
+        --line: rgba(255, 255, 255, 0.12);
+        --text: #e8e6e1;
+        --muted: #9aa0a6;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        background: #0b0d10;
+        color: var(--text);
+        font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+        overflow: hidden;
+      }
+      #view { position: fixed; inset: 0; }
+      #view canvas { display: block; }
+      #panel {
+        position: fixed;
+        top: 16px;
+        left: 16px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px 14px;
+        backdrop-filter: blur(8px);
+        max-width: min(560px, calc(100vw - 32px));
+      }
+      #panel h1 {
+        margin: 0 0 8px;
+        font-size: 13px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .row { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
+      label { color: var(--muted); }
+      select, input {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--line);
+        color: var(--text);
+        border-radius: 5px;
+        padding: 4px 7px;
+        font: inherit;
+      }
+      input { width: 90px; }
+      #status { color: var(--muted); white-space: pre-wrap; }
+      #hint { color: var(--muted); opacity: 0.75; margin-top: 6px; }
+      code { color: #c9d3e0; }
+    </style>
+  </head>
+  <body>
+    <div id="view"></div>
+    <div id="panel">
+      <h1>theme1 &mdash; world explorer</h1>
+      <div class="row">
+        <label for="theme">theme</label>
+        <select id="theme"></select>
+        <label for="seed">seed</label>
+        <input id="seed" type="number" value="42" />
+      </div>
+      <div id="status">loading...</div>
+      <div id="hint">drag to orbit &middot; wheel to zoom &middot; <code>R</code> for the next seed</div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
